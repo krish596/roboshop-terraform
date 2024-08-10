@@ -1,5 +1,5 @@
 
 bucket = "tf-state-db74"
-key    = "env-dev/main.tfvars"
+key    = "dev/terraform.tfstate"
 region = "us-east-1"
 
