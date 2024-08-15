@@ -21,3 +21,4 @@ vpc = {
 }
 
 default_vpc_id = "vpc-0c4d364ec3aff7983"
+default_vpc_cidr = "172.31.0.0/16"
