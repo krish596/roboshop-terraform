@@ -5,4 +5,4 @@ variable "default_vpc_route_table_id" {}
 variable "tags" {}
 variable "env" {}
 variable "alb" {}
-variable "docdb" {}
+# variable "docdb" {}
