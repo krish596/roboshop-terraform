@@ -1,4 +1,4 @@
-# output "vpc" {
-#   value = data.aws_subnets.subnets
-#
-# }
+output "vpc" {
+  value = module.vpc
+
+}
