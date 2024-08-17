@@ -22,7 +22,7 @@ module "alb" {
   subnets = each.value["internal"] ? local.app_subnets : data.aws_subnets.subnets.ids
   tags = var.tags
   env = var.env
-
+  sg_port = each.value["sg_port"]
 
 
 }
