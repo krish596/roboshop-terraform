@@ -1,4 +1,4 @@
-output "vpc" {
-  value = local.vpc_id
-
-}
+# output "vpc" {
+#   value = data.aws_subnets.subnets
+#
+# }
