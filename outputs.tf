@@ -1,3 +1,3 @@
 output "vpc" {
-  value = local.vpc_id
+  value = local.app_subnets
 }
