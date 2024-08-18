@@ -115,7 +115,7 @@ module "app" {
 
   tags = var.tags
   env = var.env
-
+  instance_type = each.value["instance_type"]
 
 }
 
