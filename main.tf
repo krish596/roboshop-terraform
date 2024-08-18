@@ -92,7 +92,7 @@ module "alb" {
 #   subnet_ids = local.db_subnets
 #   vpc_id = local.vpc_id
 #   sg_ingress_cidr = local.app_subnets_cidr
-#   ssh_ingress_cidr = each.value["ssh_ingress_cidr"]
+#   ssh_ingress_cidr =  var.ssh_ingress_cidr
 #   instance_type = each.value["instance_type"]
 #
 #   tags = var.tags
@@ -102,7 +102,22 @@ module "alb" {
 # }
 
 
+module "app" {
+  source = "git::https://github.com/krish596/tf-module-app.git"
+  for_each = var.apps
+  zone_id = var.zone_id
+  component = each.key
+  port = each.value["port"]
+  subnet_ids =local.app_subnets
+  vpc_id =local.vpc_id
+  sg_ingress_cidr = local.app_subnets_cidr
+  ssh_ingress_cidr = var.ssh_ingress_cidr
 
+  tags = var.tags
+  env = var.env
+
+
+}
 
 
 

@@ -3,7 +3,7 @@ default_vpc_cidr = "172.31.0.0/16"
 default_vpc_route_table_id = "rtb-08fd73f58449a8a64"
 zone_id = "Z084007432GC51JNSYQ6A"
 env = "dev"
-
+ssh_ingress_cidr = ["172.31.44.244/32"]
 tags = {
   company_name = "ABC Tech"
   business_unit = "Ecommerce"
@@ -95,8 +95,14 @@ elasticache = {
 
 rabbitmq = {
   main = {
-    ssh_ingress_cidr = ["172.31.44.244/32"]
+
     instance_type = "t3.small"
 
+  }
+}
+
+apps = {
+  frontend = {
+    instance_type = "t3.micro"
   }
 }
