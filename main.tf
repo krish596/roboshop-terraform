@@ -116,6 +116,9 @@ module "app" {
   tags = var.tags
   env = var.env
   instance_type = each.value["instance_type"]
+  desired_capacity   = each.value["desired_capacity"]
+  max_size           = each.value["max_size"]
+  min_size           = each.value["min_size"]
 
 }
 
