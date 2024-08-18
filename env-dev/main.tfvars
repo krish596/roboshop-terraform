@@ -56,5 +56,7 @@ docdb = {
     skip_final_snapshot     = true
     engine_version = "4.0.0"
     family      = "docdb4.0"
+    instance_count = 1
+    instance_class = "db.t3.medium"
   }
 }
