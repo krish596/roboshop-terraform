@@ -30,7 +30,7 @@ tags = {
   cost_created = "ecom_rs"
   created_by = "terraform"
 }
-
+zone_id = "Z084007432GC51JNSYQ6A"
 env = "dev"
 
 alb = {
