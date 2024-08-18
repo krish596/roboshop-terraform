@@ -72,5 +72,7 @@ rds = {
     skip_final_snapshot = true
     backup_retention_period = 5
     preferred_backup_window = "07:00-09:00"
+    instance_count = 1
+    instance_class = "db.t3.small"
   }
 }
