@@ -121,7 +121,7 @@ module "app" {
   min_size           = each.value["min_size"]
   lb_priority           = each.value["lb_priority"]
   alb_name = lookup(lookup(lookup(module.alb, "private", null), "alb", null), "dns_name", null)
-  listener_arn = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "listener_arn", null)
+  listener = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "arn", null)
 
 }
 
