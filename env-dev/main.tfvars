@@ -63,22 +63,22 @@ docdb = {
     instance_class = "db.t3.medium"
   }
 }
-#
-# rds = {
-#   main = {
-#     rds_type = "mysql"
-#     db_port = 3306
-#     engine = "aurora-mysql"
-#     engine_family = "aurora-mysql5.7"
-#     engine_version = "5.7.mysql_aurora.2.11.3"
-#
-#     skip_final_snapshot = true
-#     backup_retention_period = 5
-#     preferred_backup_window = "07:00-09:00"
-#     instance_count = 1
-#     instance_class = "db.t3.small"
-#   }
-# }
+
+rds = {
+  main = {
+    rds_type = "mysql"
+    db_port = 3306
+    engine = "aurora-mysql"
+    engine_family = "aurora-mysql5.7"
+    engine_version = "5.7.mysql_aurora.2.11.3"
+
+    skip_final_snapshot = true
+    backup_retention_period = 5
+    preferred_backup_window = "07:00-09:00"
+    instance_count = 1
+    instance_class = "db.t3.small"
+  }
+}
 #
 # elasticache = {
 #   main = {
