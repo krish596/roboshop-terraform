@@ -23,23 +23,23 @@ module "alb" {
   sg_port= each.value["sg_port"]
 }
 
-# module "docdb" {
-#   source = "git::https://github.com/krish596/tf-module-docdb.git"
-#   for_each = var.docdb
-#   subnet_ids = local.db_subnets
-#   backup_retention_period = each.value["backup_retention_period"]
-#   preferred_backup_window = each.value["preferred_backup_window"]
-#   skip_final_snapshot     = each.value["skip_final_snapshot"]
-#   tags = var.tags
-#   env = var.env
-#   vpc_id = local.vpc_id
-#   sg_ingress_cidr = local.app_subnets_cidr
-#   engine_version = each.value["engine_version"]
-#   engine_family = each.value["engine_family"]
-#   instance_count = each.value["instance_count"]
-#   instance_class = each.value["instance_class"]
-# }
-#
+module "docdb" {
+  source = "git::https://github.com/krish596/tf-module-docdb.git"
+  for_each = var.docdb
+  subnet_ids = local.db_subnets
+  backup_retention_period = each.value["backup_retention_period"]
+  preferred_backup_window = each.value["preferred_backup_window"]
+  skip_final_snapshot     = each.value["skip_final_snapshot"]
+  tags = var.tags
+  env = var.env
+  vpc_id = local.vpc_id
+  sg_ingress_cidr = local.app_subnets_cidr
+  engine_version = each.value["engine_version"]
+  engine_family = each.value["engine_family"]
+  instance_count = each.value["instance_count"]
+  instance_class = each.value["instance_class"]
+}
+
 # module "rds" {
 #   source = "git::https://github.com/krish596/tf-module-rds.git"
 #   for_each = var.rds
