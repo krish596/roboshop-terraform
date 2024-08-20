@@ -7,7 +7,7 @@ variable "env" {}
 variable "alb" {}
 variable "docdb" {}
 variable "rds" {}
-# variable "elasticache" {}
+variable "elasticache" {}
 # variable "rabbitmq" {}
 # variable "zone_id" {}
 # variable "apps" {}
