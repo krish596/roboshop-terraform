@@ -103,6 +103,7 @@ module "rabbitmq" {
 
 
 module "app" {
+  depends_on = [module.alb, module.docdb, module.elasticache, module.rds, module.rabbitmq]
   source = "git::https://github.com/krish596/tf-module-app.git"
   for_each = var.apps
   zone_id = var.zone_id
