@@ -116,7 +116,7 @@ module "app" {
   default_vpc_id = var.default_vpc_id
   monitoring_ingress_cidr = var.monitoring_ingress_cidr
 
-  tags = var.tags
+  tags = merge(var.tags, each.value["tags"])
   env = var.env
   instance_type = each.value["instance_type"]
   desired_capacity   = each.value["desired_capacity"]
