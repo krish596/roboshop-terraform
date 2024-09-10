@@ -39,6 +39,7 @@ module "docdb" {
   engine_family = each.value["engine_family"]
   instance_count = each.value["instance_count"]
   instance_class = each.value["instance_class"]
+  kms_key_id = var.kms_key_id
 }
 
 module "rds" {
@@ -61,6 +62,7 @@ module "rds" {
   instance_class = each.value["instance_class"]
   tags = var.tags
   env = var.env
+  kms_key_id = var.kms_key_id
 
 
 }
@@ -98,7 +100,7 @@ module "rabbitmq" {
 
   tags = var.tags
   env = var.env
-
+  kms_key_id = var.kms_key_id
 
 }
 
@@ -116,6 +118,7 @@ module "app" {
   ssh_ingress_cidr = var.ssh_ingress_cidr
   default_vpc_id = var.default_vpc_id
   monitoring_ingress_cidr = var.monitoring_ingress_cidr
+  kms_key_id = var.kms_key_id
 
   tags = merge(var.tags, each.value["tags"])
   env = var.env
