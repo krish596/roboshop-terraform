@@ -107,6 +107,17 @@ rabbitmq = {
 }
 
 apps = {
+  frontend = {
+    instance_type = "t3.small"
+    port = 80
+    desired_capacity   = 2
+    max_size           = 10
+    min_size           = 2
+    lb_priority         = 1
+    lb_type             = "public"
+    parameters          = ["nexus"]
+    tags           = {Monitor_Nginx="yes"}
+  }
 
   catalogue = {
     instance_type = "t3.small"
@@ -141,17 +152,7 @@ apps = {
     parameters          = ["nexus"]
     tags           = {}
   }
-  shipping = {
-    instance_type = "t3.medium"
-    port = 8080
-    desired_capacity   = 2
-    max_size           = 10
-    min_size           = 2
-    lb_priority         = 5
-    lb_type             = "private"
-    parameters          = ["rds", "nexus"]
-    tags           = {}
-  }
+
   payment = {
     instance_type = "t3.small"
     port = 8080
@@ -164,15 +165,17 @@ apps = {
     tags           = {}
   }
 
-  frontend = {
+
+
+  shipping = {
     instance_type = "t3.small"
-    port = 80
+    port = 8080
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
-    lb_priority         = 1
-    lb_type             = "public"
-    parameters          = ["nexus"]
-    tags           = {Monitor_Nginx="yes"}
+    lb_priority         = 5
+    lb_type             = "private"
+    parameters          = ["rds", "nexus"]
+    tags           = {}
   }
 }
